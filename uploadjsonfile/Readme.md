@@ -15,4 +15,6 @@ How to run application
 1) get the zip file or pull the code from master in git
 2) install all the necessary libraries(import_export,etc)
 3) run the server and try to check the working application.
-        
+4) use the credentials
+        username: demo
+        password: Demo@123
