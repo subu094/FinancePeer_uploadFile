@@ -1,0 +1,32 @@
+{% block content %}
+
+  <h1 class="text-center">Finance Peer</h1>
+<body>
+{% if messages %}
+{% for messsage in messages %}
+<div class="alert alert-{{message.tags}}" role="alert">
+    <p {% if message.tags %} class="" {% endif %} >{{ message }}</p>
+</div>
+{% endfor %}
+{% endif %}
+{% if user.is_authenticated %}
+<p class="text-center"> Logged in User: {{ user.get_username }}</p>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input class="text-center" type="file" name="myfile">
+    <button  class="text-center" type="submit">Upload</button>
+
+  </form>
+
+
+</body>
+
+<li><a href="/../jsdata">Get Data from DB</a></li>
+<br>
+  <button type="submit" class="text-center"><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></button>
+   {% else %}
+    <button class="text-center" type="submit"><a href="{% url 'login'%}?next={{request.path}}">Login</a></button>
+   {% endif %}
+{% endblock %}
+

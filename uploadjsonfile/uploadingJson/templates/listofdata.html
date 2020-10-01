@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<h1>Data From the Data Base</h1>
+<table>
+<tr>
+  <th>USERID</th>
+  <th>TITLE</th>
+  <th>BODY</th>
+</tr>
+{% for key in jsonlist %}
+    <tr>
+         <td>{{ key.userId }}</td>
+         <td>{{ key.title }}</td>
+         <td>{{ key.body }}</td>
+    </tr>
+{% endfor %}
+
+
+
+</table>
